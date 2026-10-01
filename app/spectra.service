@@ -1,0 +1,24 @@
+[Unit]
+Description=Spectra Telegram life coordinator
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/Desktop/.Spectra
+Environment=HOME=/root
+Environment=PATH=/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/bin/bash -c 'set -a; source .env; set +a; exec .venv/bin/python -u -B coordinator.py --live'
+Restart=always
+RestartSec=5
+KillSignal=SIGINT
+KillMode=control-group
+TimeoutStopSec=240
+UMask=0077
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

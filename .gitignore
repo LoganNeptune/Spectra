@@ -1,0 +1,60 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.env
+.envrc
+.netrc
+.pypirc
+
+# Spectra private runtime: credentials, transcripts, profiles, state, logs
+/runtime/
+state/
+logs/
+messages.txt
+telegram.txt
+*.sqlite3
+*.sqlite3-*
+*.db
+
+# Credential material anywhere in the project
+**/credentials.json
+**/*credentials*.json
+**/token*.json
+**/*-token*.json
+**/*secret*.json
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/*.secret
+
+# Local agent configuration and environments
+.venv/
+venv/
+env/
+ENV/
+.codex/
+.claude/
+.cursor/
+.grok/
+.aws/
+
+# Python caches, builds and test output
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.coverage*
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local operating-system and editor files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.tmp
+*.bak

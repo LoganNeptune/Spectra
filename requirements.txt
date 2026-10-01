@@ -1,0 +1,3 @@
+# Needed by the interactive Google Calendar authorization helper.
+# The coordinator itself uses the Python standard library.
+google-auth-oauthlib==1.4.1
